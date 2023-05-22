@@ -1,0 +1,15 @@
+rosbag play /home/eugene/Desktop/front/All/near_right.bag
+
+python bag2images.py --bag_file /home/eugene/Desktop/calib_2/front_left/all/1.bag --output_dir /home/eugene/Desktop/tryextractfolder/ --image_topic hello
+
+python bag2images.py /home/eugene/Desktop/calib_2/front_left/all/1.bag /home/eugene/Desktop/tryextractfolder/ hello
+
+rosrun pcl_ros bag_to_pcd /home/eugene/Desktop/calib_2/front_left/all/1.bag /fuselidar/rslidar_points /home/eugene/Desktop/tryextractpoints/
+
+rosrun pcl_ros pcd_viewer /home/eugene/Desktop/tryextractpoints/1643273821.350606592.pcd
+
+pcl_viewer /home/eugene/Desktop/tryextractpoints/1643273821.350606592.pcd
+
+python bag2images.py /home/eugene/Desktop/calib_2/front_left/all/1.bag /home/eugene/Desktop/tryextractfolder/ hello
+
+rosrun listening listen2

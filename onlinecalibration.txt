@@ -1,0 +1,39 @@
+cv2.getgoodpoints (shi-tomashi)
+cv2.opticalflowlk (lucas Kanade)
+get intersection points between flow lines
+
+ def calc_intersection(self, filt_line):
+        self.all_inters_pt = []
+        
+        for j in range(len(filt_line)):
+          for i in range(j, len(filt_line)):
+
+            if i in [0,1] and j in [0,1]: continue
+
+            for linea in filt_line[i]:
+              for lineb in filt_line[j]:
+                #linea = filt_line[j]
+                #lineb = filt_line[i]
+
+                # change to only allow lines that are not in the same quadrants
+                #if lineb[3] == linea[3]: continue
+                
+                m_b = lineb[0]
+                m_a = linea[0]
+                
+                # Uses filtering to remove lines that are very similar to one another
+                #if ( lineb[3] == 2 and linea[3] == 3 ) or ( lineb[3] == 3 and linea[3] == 2 ):
+                if abs( m_b - m_a ) < self.angle_gap:
+                    continue              
+                
+                inter_x = (linea[2]-lineb[2])/(m_b - m_a)
+                inter_y = m_a*inter_x + linea[2]
+                
+                if not self.featurepoint_check(inter_x,inter_y): continue
+                
+                self.all_inters_pt.append( [ inter_x, inter_y ] )
+        
+filter out unnecessary flow lines
+voting of intersection points at the middle of image
+use voting heatmap to generate pitch and yaw angles
+use pitch and yaw angles and 0 roll angle to form homography matrix

@@ -1,0 +1,34 @@
+TO add a new device:
+--------------------
+check the video devices connected  to the computer:
+ls -l /dev/vid*
+
+Check the device serial number with below command:
+udevadm info --name=/dev/video* --attribute-walk
+
+
+Edit the file myvideodevices.rules with information of serial number and alias name as below:
+Example:
+ATTRS{serial}=="SN0003",ATTR{index}=="0", SYMLINK+="video300"
+ATTRS{serial}=="SN0001",ATTR{index}=="0", SYMLINK+="video100"
+
+ATTRS{interface}=="USB Camera", ATTR{index}=="0", SYMLINK+="video100"
+
+Copy the file myvideodevices.rules to folder /etc/udev/rules.d/
+sudo cp myvideodevices.rules /etc/udev/rules.d/
+
+
+run below command to load rules:
+
+sudo udevadm control --reload 
+sudo udevadm trigger
+
+
+Fixed name for USB cameras:  (creating symbolic links)
+----------------------------
+Copy the file myvideodevices.rules to folder /etc/udev/rules.d/
+run below command to load rules:
+
+sudo udevadm control --reload 
+sudo udevadm trigger 
+

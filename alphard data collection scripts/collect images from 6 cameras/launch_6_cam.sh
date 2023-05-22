@@ -1,0 +1,2 @@
+#!/bin/bash
+gnome-terminal --tab --title="tab 0" --command="bash -c 'python read_videox.py 0 10; $SHELL'" --tab --title="tab 1" --command="bash -c 'python read_videox.py 1 10; $SHELL'" --tab --title="tab 2" --command="bash -c 'python read_videox.py 2 10; $SHELL'" --tab --title="tab 3" --command="bash -c 'python read_videox.py 3 10; $SHELL'" --tab --title="tab 4" --command="bash -c 'python read_videox.py 4 10; $SHELL'" --tab --title="tab 5" --command="bash -c 'python read_videox.py 5 10; $SHELL'"

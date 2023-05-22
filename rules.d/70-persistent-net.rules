@@ -1,0 +1,5 @@
+#ACTION=="add", SUBSYSTEM=="net", DEVTYPE!="?*", ATTR{address}=="00:0e:c6:e0:99:a8", NAME="startech_en0"
+SUBSYSTEM=="net", ACTION=="add", ATTRS{idVendor}=="0b95", ATTRS{idProduct}=="1790", NAME="ueth0", , RUN+="/bin/set_ip.sh"
+SUBSYSTEM=="net", ACTION=="add", ATTRS{idVendor}=="0b95", ATTRS{idProduct}=="772b", NAME="ueth0", RUN+="/bin/set_ip.sh"
+SUBSYSTEM=="net", ACTION=="add", ATTRS{idVendor}=="1e0e", ATTRS{idProduct}=="9001",  SYMLINK+="mobile%n"
+

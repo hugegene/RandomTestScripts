@@ -1,0 +1,1 @@
+ATTRS{interface}=="USB  Camera", ATTR{index}=="0", SYMLINK+="video10"

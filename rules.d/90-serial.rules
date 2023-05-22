@@ -1,0 +1,17 @@
+#SUBSYSTEM=="tty", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6010", ATTRS{manufacturer}=="MooVita", SYMLINK+="ttyCAN%n"
+
+#SUBSYSTEM=="tty", ATTRS{idVendor}=="1e0e", ATTRS{idProduct}=="9001", ATTRS{serial}=="0123456789ABCDEF", SYMLINK+="ttyGPS%n"
+
+SUBSYSTEM=="tty", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6010", ATTRS{manufacturer}=="MooVita", ENV{ID_PATH}=="platform-70090000.xusb-usb-0:2.2:1.0", SYMLINK+="ttyCAN0"
+
+SUBSYSTEM=="tty", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6010", ATTRS{manufacturer}=="MooVita", ENV{ID_PATH}=="platform-70090000.xusb-usb-0:2.2:1.1", SYMLINK+="ttyCAN1"
+
+SUBSYSTEM=="tty", ATTRS{idVendor}=="1e0e", ATTRS{idProduct}=="9001", ATTRS{serial}=="0123456789ABCDEF", ENV{ID_PATH}=="platform-70090000.xusb-usb-0:2.4:1.0" SYMLINK+="ttyGPS0"
+
+SUBSYSTEM=="tty", ATTRS{idVendor}=="1e0e", ATTRS{idProduct}=="9001", ATTRS{serial}=="0123456789ABCDEF", ENV{ID_PATH}=="platform-70090000.xusb-usb-0:2.4:1.1" SYMLINK+="ttyGPS1"
+
+SUBSYSTEM=="tty", ATTRS{idVendor}=="1e0e", ATTRS{idProduct}=="9001", ATTRS{serial}=="0123456789ABCDEF", ENV{ID_PATH}=="platform-70090000.xusb-usb-0:2.4:1.2" SYMLINK+="ttyGPS2"
+
+SUBSYSTEM=="tty", ATTRS{idVendor}=="1e0e", ATTRS{idProduct}=="9001", ATTRS{serial}=="0123456789ABCDEF", ENV{ID_PATH}=="platform-70090000.xusb-usb-0:2.4:1.3" SYMLINK+="ttyGPS3"
+
+SUBSYSTEM=="tty", ATTRS{idVendor}=="1e0e", ATTRS{idProduct}=="9001", ATTRS{serial}=="0123456789ABCDEF", ENV{ID_PATH}=="platform-70090000.xusb-usb-0:2.4:1.4" SYMLINK+="ttyGPS4"
